@@ -62,13 +62,13 @@ const Slider = () => {
     }, []);
 
   return (
-    <main className='flex justify-center align-middle h-[100vh] bg-white fontPoppins overflow-hidden'>
-    <div className='w-[80%]'>
+    <main>
+    <div className='container'>
         <Swiper modules={[Pagination]}
         grabCursor
-        initialSlide={2}
+        initialSlide={0}
         centeredSlides
-        slidesPerView="auto"
+        slidesPerView={1}
         speed={800}
         slideToClickedSlide
         pagination={{ clickable: true }}
@@ -80,11 +80,10 @@ const Slider = () => {
         onSwiper={(swiper) => {
             swiperWrappedRef.current = swiper.wrapperEl;
         }}
-        className='w-[100%] p-[60px]'
         >
             {sliderData.map((item, index) => (
-                <SwiperSlide key={index} className='relative w-[300px] h-[500px]'>
-                    <img src={item.imgSrc} alt={item.title} className='block w-[100%] h-[100%] object-cover' />
+                <SwiperSlide key={index}>
+                    <img src={item.imgSrc} alt={item.title}/>
                     <div className='title'>
                         <h1>{item.title}</h1>
                     </div>
