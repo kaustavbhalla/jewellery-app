@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Image from 'next/image';
@@ -64,8 +64,9 @@ const Slider = () => {
   return (
     <main>
     <div className='container'>
-        <Swiper modules={[Pagination]}
+        <Swiper modules={[Pagination, Autoplay]}
         grabCursor
+        autoplay={{ delay: 1500, disableOnInteraction: false }}
         initialSlide={0}
         centeredSlides
         slidesPerView={1}
